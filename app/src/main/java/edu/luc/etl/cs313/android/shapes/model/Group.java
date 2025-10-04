@@ -9,6 +9,7 @@ import java.util.List;
  */
 public non-sealed class Group implements Shape {
 
+
     protected final List<? extends Shape> shapes;
 
     public Group(final Shape... shapes) {
@@ -16,11 +17,14 @@ public non-sealed class Group implements Shape {
     }
 
     public List<? extends Shape> getShapes() {
+
         return Collections.unmodifiableList(shapes);
     }
 
+
     @Override
     public <Result> Result accept(final Visitor<Result> v) {
+
         return v.onGroup(this);
     }
 
