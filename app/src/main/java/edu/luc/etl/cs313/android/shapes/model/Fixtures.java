@@ -5,7 +5,7 @@ import android.graphics.Color;
 /**
  * Test fixtures shared across test cases.
  */
-public class Fixtures  {
+public class Fixtures {
 
     private Fixtures() { /* prevent instantiation! */ }
 
@@ -19,21 +19,25 @@ public class Fixtures  {
     public static final Shape simpleStrokeColor = new StrokeColor(Color.RED, new Rectangle(80, 120));
 
     public static final Shape simpleGroup = new Group(
-        new Location(200, 100, new Circle(50)),
-        new Location(400, 300, new Rectangle(100, 50))
+            new Location(200, 100, new Circle(50)),
+            new Location(400, 300, new Rectangle(100, 50))
     );
 
     public static final Shape middleGroup = new Location(50, 100,
-        new Group(
-            new Outline(new Rectangle(50, 30)),
-            new Location(400, 300,
-                new Group(
-                    new Circle(20),
-                    new Fill(new Rectangle(50, 30))
-                )
+            new Group(
+                    new Outline(new Rectangle(50, 30)),
+                    new Location(400, 300,
+                            new Group(
+                                    new Circle(20),
+                                    new Fill(new Rectangle(50, 30)),
+                                    new Polygon()// empty polygon
+                    )
             )
-        )
+    )
     );
+
+
+
 
     public static final Shape complexGroup = new Location(50, 100,
         new Group(
