@@ -20,7 +20,7 @@ public class Fixtures {
 
     public static final Shape simpleGroup = new Group(
             new Location(200, 100, new Circle(50)),
-            new Location(400, 300, new Rectangle(100, 50))
+            new Location(150, 50, new Rectangle(350, 300))
     );
 
     public static final Shape middleGroup = new Location(50, 100,
