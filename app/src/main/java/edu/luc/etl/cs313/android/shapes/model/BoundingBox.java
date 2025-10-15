@@ -56,6 +56,7 @@ public class BoundingBox implements Visitor<Location> {
                 inner.getShape()
         );
 
+
     }
 
     @Override
@@ -85,13 +86,17 @@ public class BoundingBox implements Visitor<Location> {
         int maxX = Integer.MIN_VALUE;
         int maxY = Integer.MIN_VALUE;
 
-        for (Point point: s.getPoints()) {
+        for (Point point : s.getPoints()) {
             minX = Math.min(minX, point.getX());
             minY = Math.min(minY, point.getY());
             maxX = Math.max(maxX, point.getX());
             maxY = Math.max(maxY, point.getY());
         }
 
-        return new Location(50, 50, new Rectangle(70, 60));
+        return new Location(
+                minX,
+                minY,
+                new Rectangle(maxX - minX, maxY - minY)
+        );
     }
 }
